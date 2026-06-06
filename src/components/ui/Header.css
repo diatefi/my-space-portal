@@ -4,10 +4,12 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 50px;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+
   
   /* Ефект матового скла */
   background: rgba(15, 23, 42, 0.4); /* Напівпрозорий темно-синій фон */
