@@ -4,6 +4,7 @@ import './Header.css';
 export default function Header({ isPaused, setIsPaused, setIsNewsOpen, setIsAboutOpen }) {
   return (
     <header className="main-header">
+      <div className="header-wrapper">
       <div className="logo">
         <span className="logo-icon">🚀</span> SPACE PORTAL
       </div>
@@ -25,11 +26,14 @@ export default function Header({ isPaused, setIsPaused, setIsNewsOpen, setIsAbou
         }}>
           Про проєкт
         </a>
-        
+       
         <button className="pause-btn" onClick={() => setIsPaused(!isPaused)}>
           {isPaused ? '▶ Відновити час' : '⏸ Зупинити час'}
         </button>
+         
       </nav>
+       </div>
     </header>
+     
   );
 }
