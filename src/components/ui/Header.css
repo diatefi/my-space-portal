@@ -11,6 +11,7 @@
   margin: 0 auto !important;     /* Центруємо */
   box-sizing: border-box !important;
   width: 100% !important;
+  border: 1px solid red !important;
 
   
   /* Ефект матового скла */
