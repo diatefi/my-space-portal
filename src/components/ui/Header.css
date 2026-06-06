@@ -6,10 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 20px !important;
-  padding-right: 20px !important;
+  position: relative !important; /* Щоб не вилітало за межі */
+  padding: 0 20px !important;    /* 0 зверху/знизу, 20px з боків */
+  width: calc(100% - 40px) !important; /* Ширина мінус відступи */
+  margin: 0 auto !important;     /* Центруємо */
   box-sizing: border-box !important;
-  width: 100% !important;
 
   
   /* Ефект матового скла */
@@ -78,8 +79,6 @@
     flex-direction: column !important; /* Ставить елементи один під одним */
     height: auto !important;           /* Дозволяє шапці розтягнутися */
     padding: 20px !important;
-    padding-left: 20px !important;
-    padding-right: 20px !important;
     gap: 10px !important;              /* Відстань між логотипом і меню */
   }
 
