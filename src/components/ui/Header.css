@@ -74,7 +74,7 @@
   .main-header {
     flex-direction: column !important; /* Ставить елементи один під одним */
     height: auto !important;           /* Дозволяє шапці розтягнутися */
-    padding: 10px !important;
+    padding: 20px !important;
     gap: 10px !important;              /* Відстань між логотипом і меню */
   }
 
