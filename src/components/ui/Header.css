@@ -40,6 +40,8 @@
 .nav-links {
   display: flex;
   gap: 30px;
+  margin-right: 20px !important;
+  margin-left: 20px !important;
 }
 
 .nav-links a {
@@ -87,6 +89,6 @@
     flex-wrap: wrap;                   /* Переносить посилання на новий рядок, якщо не влазять */
     justify-content: center;
     gap: 10px;
-    padding: 20px !important;
+    
   }
 }
