@@ -273,7 +273,7 @@
 @media (max-width: 768px) {
   .info-panel {
     position: absolute;
-    bottom: 0;       /* Притискаємо до самого низу */
+    bottom: 10;       /* Притискаємо до самого низу */
     left: auto;
     width: 100%;     /* На всю ширину */
     top: auto;       /* Скасовуємо верхню прив'язку */
