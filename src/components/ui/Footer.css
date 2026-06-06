@@ -1,0 +1,43 @@
+.main-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 50px;
+  
+  /* Ефект матового скла, як у хедері */
+  background: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  
+  z-index: 1000;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #a0aec0;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.footer-author strong {
+  color: #e2e8f0;
+  letter-spacing: 0.5px;
+}
+
+/* Адаптація для маленьких екранів */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+  }
+}

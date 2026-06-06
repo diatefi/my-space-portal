@@ -1,0 +1,285 @@
+/* Інформаційна панель */
+.info-panel {
+  position: absolute;
+  right: 20px;
+  top: 100px;
+  width: 350px;
+  padding: 25px;
+  color: white;
+  z-index: 999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 40px;
+  
+  /* Ефект скла */
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+}
+
+.info-panel h2 {
+  margin-top: 0;
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+
+.planet-badge {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.3);
+  border: 1px solid #3b82f6;
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.planet-fact {
+  line-height: 1.6;
+  color: #e2e8f0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 15px;
+}
+
+/* Кнопка закриття */
+.close-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background: none;
+  border: none;
+  color: #a0aec0;
+  font-size: 18px;
+  cursor: pointer;
+  transition: color 0.2s;
+  z-index: 10;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+/* Анімація плавної появи */
+.animate-slide {
+  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Панель новин (виїжджає зліва) */
+.news-panel {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  width: 380px;
+  max-height: calc(100vh - 140px);
+  padding: 25px;
+  color: white;
+  z-index: 999;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Щоб можна було скролити новини, якщо їх багато */
+  overflow-y: auto; 
+}
+
+/* Скролбар для панелі новин */
+.news-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.news-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.news-panel h2 {
+  margin-top: 0;
+  font-size: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+/* Картка окремої новини */
+.news-card {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.news-img {
+  width: 100%;
+  height: 140px;
+  background-size: cover;
+  background-position: center;
+}
+
+.news-text {
+  padding: 15px;
+}
+
+.news-text h3 {
+  margin: 0 0 10px 0;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #e2e8f0;
+}
+
+.read-more {
+  display: inline-block;
+  color: #3b82f6;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.read-more:hover {
+  color: #60a5fa;
+  text-decoration: underline;
+}
+
+.loading-text {
+  text-align: center;
+  color: #a0aec0;
+  font-style: italic;
+}
+
+/* Анімація появи зліва */
+.animate-slide-left {
+  animation: slideInLeft 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+/* Вікно "Про проєкт" */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px); /* Розмиває всю сцену на фоні */
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000; /* Має бути вище за всі інші панелі */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-modal {
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 40px;
+  width: 500px;
+  max-width: 90%;
+  color: #e2e8f0;
+  position: relative;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+.about-modal h2 {
+  color: white;
+  margin-top: 0;
+  font-size: 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.about-modal h3 {
+  color: white;
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+.tech-list {
+  padding-left: 20px;
+  line-height: 1.8;
+}
+
+.tech-list li {
+  margin-bottom: 8px;
+}
+
+.author-info {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  color: #a0aec0;
+}
+
+.author-info strong {
+  color: white;
+  font-size: 18px;
+}
+
+.author-info p {
+  margin: 5px 0;
+}
+
+/* Плавна поява вікна */
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .info-panel {
+    position: absolute;
+    bottom: 0;       /* Притискаємо до самого низу */
+    left: 0;
+    width: 100%;     /* На всю ширину */
+    top: auto;       /* Скасовуємо верхню прив'язку */
+    right: auto;
+    border-radius: 20px 20px 0 0; /* Округлюємо тільки верхні кути */
+    padding: 60px;
+    max-height: 40vh; /* Обмежуємо висоту, щоб воно не займало весь екран */
+    overflow-y: auto; /* Додаємо скрол, якщо текст довгий */
+  }
+}
