@@ -282,5 +282,7 @@
     padding: 60px;
     max-height: 40vh; /* Обмежуємо висоту, щоб воно не займало весь екран */
     overflow-y: auto; /* Додаємо скрол, якщо текст довгий */
+    -webkit-overflow-scrolling: touch;
+    touch-action: auto;
   }
 }
