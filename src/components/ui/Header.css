@@ -7,10 +7,10 @@
   justify-content: space-between;
   align-items: center;
   position: relative !important; /* Щоб не вилітало за межі */
-  padding: 0 20px !important;    /* 0 зверху/знизу, 20px з боків */
-  width: calc(100% - 40px) !important; /* Ширина мінус відступи */
+  padding: 10px 20px;
   margin: 0 auto !important;     /* Центруємо */
   box-sizing: border-box !important;
+  width: 100% !important;
 
   
   /* Ефект матового скла */
