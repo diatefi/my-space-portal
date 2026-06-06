@@ -87,5 +87,6 @@
     flex-wrap: wrap;                   /* Переносить посилання на новий рядок, якщо не влазять */
     justify-content: center;
     gap: 10px;
+    padding: 20px !important;
   }
 }
