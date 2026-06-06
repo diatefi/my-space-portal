@@ -4,7 +4,7 @@ import './Header.css';
 export default function Header({ isPaused, setIsPaused, setIsNewsOpen, setIsAboutOpen }) {
   return (
     <header className="main-header">
-      <div className="header-wrapper">
+    
       <div className="logo">
         <span className="logo-icon">🚀</span> SPACE PORTAL
       </div>
@@ -32,7 +32,7 @@ export default function Header({ isPaused, setIsPaused, setIsNewsOpen, setIsAbou
         </button>
          
       </nav>
-       </div>
+      
     </header>
      
   );

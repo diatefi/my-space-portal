@@ -94,7 +94,7 @@
     gap: 10px !important;              /* Відстань між логотипом і меню */
   }
 
-  .header nav {
+  .nav-links {
     display: flex;
     flex-wrap: wrap;                   /* Переносить посилання на новий рядок, якщо не влазять */
     justify-content: center;
