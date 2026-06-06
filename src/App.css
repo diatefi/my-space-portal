@@ -280,9 +280,12 @@
     right: auto;
     border-radius: 20px 20px 0 0; /* Округлюємо тільки верхні кути */
     padding: 60px;
-    max-height: 40vh; /* Обмежуємо висоту, щоб воно не займало весь екран */
-    overflow-y: auto; /* Додаємо скрол, якщо текст довгий */
+    max-height: 50vh !important; /* Даємо більше місця */
+    min-height: 200px;
+    overflow-y: auto !important; 
     -webkit-overflow-scrolling: touch;
-    touch-action: auto;
+    pointer-events: auto !important; /* Гарантує, що кліки/скрол проходять */
+    touch-action: pan-y !important; /* Дозволяє тільки вертикальний скрол */
+    z-index: 9999 !important; /* Щоб панель була поверх усього */
   }
 }
