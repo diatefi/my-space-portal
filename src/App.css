@@ -22,8 +22,9 @@
 
 .info-panel h2 {
   margin-top: 0;
-  font-size: 26px;
+  font-size: 20px;
   letter-spacing: 1px;
+    margin-bottom: 10px;
 }
 
 .planet-badge {
@@ -273,7 +274,7 @@
   .info-panel {
     position: absolute;
     bottom: 0;       /* Притискаємо до самого низу */
-    left: 0;
+    left: auto;
     width: 100%;     /* На всю ширину */
     top: auto;       /* Скасовуємо верхню прив'язку */
     right: auto;
