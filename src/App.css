@@ -338,5 +338,46 @@
     right: 15px !important;
     font-size: 16px !important;
   }
+
+  /* --- Адаптація панелі НОВИН для горизонтального режиму --- */
+  .news-panel {
+    top: 45px !important; /* Підтягуємо під саму вузьку шапку */
+    left: env(safe-area-inset-left, 15px) !important; /* Відступ від лівого краю екрана з урахуванням "чубчика" айфона */
+    width: 300px !important; /* Робимо панель акуратною, щоб не перекривала весь космос */
+    max-height: calc(100dvh - 60px) !important; /* Висота до самого низу екрана */
+    padding: 15px !important;
+    z-index: 9999 !important;
+    
+    /* Запобіжник для iOS Safari: вимикаємо розмиття, щоб скрол новин не глючив */
+    background: rgba(15, 23, 42, 0.98) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Зменшуємо головний заголовок новин */
+  .news-panel h2 {
+    font-size: 18px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 8px !important;
+  }
+
+  /* Робимо картинки новин нижчими, щоб більше інформації помістилося на екрані */
+  .news-img {
+    height: 80px !important; 
+  }
+
+  /* Зменшуємо відступи та текст у самих картках новин */
+  .news-text {
+    padding: 10px !important;
+  }
+  
+  .news-text h3 {
+    font-size: 13px !important;
+    margin-bottom: 5px !important;
+  }
+  
+  .read-more {
+    font-size: 11px !important;
+  }
 }
 }
