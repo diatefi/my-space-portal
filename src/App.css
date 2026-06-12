@@ -288,4 +288,52 @@
     touch-action: pan-y !important; /* Дозволяє тільки вертикальний скрол */
     z-index: 9999 !important; /* Щоб панель була поверх усього */
   }
+
+  /* Адаптація панелі планети для ГОРИЗОНТАЛЬНОГО режиму телефонів */
+@media (max-height: 500px) and (orientation: landscape) {
+  .info-panel {
+    position: absolute;
+    bottom: 0;           /* Притискаємо до самого низу */
+    left: 0;
+    right: 0;
+    top: auto;           /* Скасовуємо верхній відступ */
+    width: 100% !important; /* На всю ширину екрана */
+    height: 55vh !important; /* Займає лише 55% висоти екрана */
+    max-height: 200px !important;
+    padding: 15px 20px !important; /* Значно зменшуємо внутрішні відступи */
+    border-radius: 15px 15px 0 0; 
+    
+    /* Додаємо скрол */
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch;
+    pointer-events: auto !important;
+    touch-action: pan-y !important;
+    z-index: 9999 !important;
+  }
+
+  /* Зменшуємо шрифти всередині панелі, щоб більше влазило */
+  .info-panel h2 {
+    font-size: 18px !important;
+    margin-bottom: 5px !important;
+  }
+
+  .planet-badge {
+    padding: 2px 8px !important;
+    font-size: 10px !important;
+    margin-bottom: 8px !important;
+  }
+
+  .planet-fact {
+    font-size: 12px !important;
+    line-height: 1.4 !important;
+    padding-top: 8px !important;
+  }
+
+  /* Зменшуємо та підсуваємо кнопку закриття (хрестик) */
+  .close-btn {
+    top: 15px !important;
+    right: 15px !important;
+    font-size: 16px !important;
+  }
+}
 }
