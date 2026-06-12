@@ -80,7 +80,24 @@ export default function SolarSystem({ isPaused, selectedPlanet, setSelectedPlane
           cameraOffset = new THREE.Vector3(targetX, config.size * 3 + 4, targetZ + config.size * 4 + 6);
         }
 
-        const targetPlanetPos = new THREE.Vector3(targetX, 0, targetZ);
+        // Визначаємо, чи відкритий сайт на мобільному пристрої (ширина менше 768px)
+        const isMobile = window.innerWidth < 768;
+        
+        // Налаштовуємо зміщення по осі Y
+        let offsetY = 0; // Для комп'ютера фокус залишається по центру
+        
+        if (isMobile) {
+          // Якщо це Сонце (воно велике), зміщуємо фокус камери значно нижче
+          if (selectedPlanet === 'sun') {
+            offsetY = -12; 
+          } else {
+            // Для звичайних планет зміщуємо фокус трохи нижче
+            offsetY = -4; 
+          }
+        }
+
+        // Створюємо нову точку фокусу з урахуванням нашого зміщення
+        const targetPlanetPos = new THREE.Vector3(targetX, offsetY, targetZ);
         state.controls.target.lerp(targetPlanetPos, 0.05);
         state.camera.position.lerp(cameraOffset, 0.05);
       } else {
