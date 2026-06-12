@@ -51,10 +51,10 @@ function App() {
       <div 
   className="info-panel animate-slide"
   // Додаємо Capture-події для жорсткого перехоплення жестів на iOS:
-  onPointerDownCapture={(e) => e.stopPropagation()}
-  onTouchStartCapture={(e) => e.stopPropagation()}
-  onTouchMoveCapture={(e) => e.stopPropagation()}
-  onWheelCapture={(e) => e.stopPropagation()}
+  onPointerDown={(e) => e.stopPropagation()}
+  onTouchStart={(e) => e.stopPropagation()}
+  onTouchMove={(e) => e.stopPropagation()}
+  onWheel={(e) => e.stopPropagation()}
 ></div>
       <button className="close-btn" onClick={() => setSelectedPlanet(null)}>✕</button>
       <h2>{PLANET_DATA[selectedPlanet].title || PLANET_DATA[selectedPlanet].title2}</h2>
