@@ -5,7 +5,7 @@ import Header from './components/ui/Header.jsx';
 import NewsPanel from './components/ui/NewsPanel.jsx';
 import AboutModal from './components/ui/AboutModal.jsx';
 import Footer from './components/ui/Footer.jsx';
-import './App.css'; // Переконайтеся, що файл стилів підключений
+import './App.css'; 
 
 
 // База даних планет для інформаційної панелі

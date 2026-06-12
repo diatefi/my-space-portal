@@ -102,4 +102,40 @@
     padding: 0 10px !important;
     
   }
+  /* Адаптація для горизонтального положення мобільних пристроїв */
+@media (max-height: 500px) and (orientation: landscape) {
+  
+  /* Звернись до свого класу хедеру (наприклад, .header, .nav, або просто header) */
+  header { 
+    display: flex;
+    flex-direction: row !important; /* Примусово ставимо в 1 рядок */
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 15px !important; /* Робимо відступи мінімальними */
+    height: auto;
+  }
+
+  /* Логотип "SPACE PORTAL" */
+  .logo { /* або клас логотипу */
+    font-size: 1.2rem !important;
+    margin: 0;
+  }
+
+  /* Текстові посилання меню ("Сонячна система", "Новини...") */
+  .nav-links { /* заміни на свій клас контейнера посилань */
+    /* Варіант 1: Повністю приховати для кращого огляду 3D */
+    display: none !important; 
+    
+    /* Варіант 2: Якщо хочеш залишити, розкоментуй це замість display: none:
+    font-size: 12px;
+    gap: 10px;
+    */
+  }
+
+  /* Кнопка "Зупинити час" */
+  button { /* або клас твоєї кнопки */
+    padding: 5px 10px !important;
+    font-size: 12px !important;
+  }
+}
 }
