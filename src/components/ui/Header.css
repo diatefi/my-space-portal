@@ -86,11 +86,13 @@
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
 }
 /* Додай це в кінець файлу Header.css */
+
+/* 1. Адаптація для звичайних вертикальних телефонів (Portrait) */
 @media (max-width: 768px) {
   .main-header {
     flex-direction: column !important; /* Ставить елементи один під одним */
     height: auto !important;           /* Дозволяє шапці розтягнутися */
-    padding: 20px !important;
+    padding: 15px 20px !important;
     gap: 10px !important;              /* Відстань між логотипом і меню */
   }
 
@@ -100,42 +102,54 @@
     justify-content: center;
     gap: 10px;
     padding: 0 10px !important;
-    
   }
-  /* Адаптація для горизонтального положення мобільних пристроїв */
-@media (max-height: 500px) and (orientation: landscape) {
   
-  /* Звернись до свого класу хедеру (наприклад, .header, .nav, або просто header) */
-  header { 
-    display: flex;
-    flex-direction: row !important; /* Примусово ставимо в 1 рядок */
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 15px !important; /* Робимо відступи мінімальними */
-    height: auto;
-  }
-
-  /* Логотип "SPACE PORTAL" */
-  .logo { /* або клас логотипу */
-    font-size: 1.2rem !important;
-    margin: 0;
-  }
-
-  /* Текстові посилання меню ("Сонячна система", "Новини...") */
-  .nav-links { /* заміни на свій клас контейнера посилань */
-    /* Варіант 1: Повністю приховати для кращого огляду 3D */
-    display: none !important; 
-    
-    /* Варіант 2: Якщо хочеш залишити, розкоментуй це замість display: none:
-    font-size: 12px;
-    gap: 10px;
-    */
-  }
-
-  /* Кнопка "Зупинити час" */
-  button { /* або клас твоєї кнопки */
-    padding: 5px 10px !important;
-    font-size: 12px !important;
+  .pause-btn {
+    margin-left: 0 !important; /* Забираємо зайвий відступ на телефонах */
   }
 }
+
+/* 2. Адаптація ДЛЯ ГОРИЗОНТАЛЬНОГО екрана (Landscape) */
+@media (max-height: 500px) and (orientation: landscape) {
+  .main-header { 
+    flex-direction: row !important; /* Примусово ставимо все в 1 рядок */
+    justify-content: space-between !important;
+    padding: 2px 15px !important; /* Відступи мінімальні */
+    height: 40px !important; /* Дуже вузька шапка */
+  }
+
+  .header-wrapper {
+    flex-direction: row !important;
+  }
+
+  /* Зменшуємо логотип */
+  .logo { 
+    font-size: 14px !important;
+    margin: 0 !important;
+    white-space: nowrap !important; /* Забороняємо розривати слова */
+  }
+
+  /* Вибудовуємо меню в рядок */
+  .nav-links { 
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important; /* Жодних переносів на новий рядок */
+    align-items: center !important;
+    gap: 12px !important; 
+    padding: 0 !important;
+  }
+
+  /* Зменшуємо текст посилань */
+  .nav-links a {
+    font-size: 11px !important; 
+    white-space: nowrap !important; 
+  }
+
+  /* Зменшуємо кнопку паузи */
+  .pause-btn { 
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+    margin-left: 5px !important; 
+    white-space: nowrap !important;
+  }
 }
