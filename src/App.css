@@ -379,5 +379,49 @@
   .read-more {
     font-size: 11px !important;
   }
+
+  /* --- Адаптація вікна "Про проєкт" для горизонтального режиму --- */
+  .about-modal {
+    max-height: 85dvh !important; /* Обмежуємо висоту, щоб вікно не вилазило за екран */
+    width: 85% !important;        /* Робимо його трохи ширшим для кращого використання простору */
+    padding: 20px 20px calc(20px + env(safe-area-inset-bottom)) 20px !important; /* Зменшуємо величезні відступи */
+    
+    /* Вмикаємо скрол для контенту */
+    overflow-y: auto !important; 
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  /* Зменшуємо головний заголовок */
+  .about-modal h2 {
+    font-size: 20px !important;
+    margin-bottom: 12px !important;
+    padding-bottom: 10px !important;
+  }
+
+  /* Зменшуємо підзаголовки ("Використані технології:") */
+  .about-modal h3 {
+    font-size: 16px !important;
+    margin-top: 15px !important;
+  }
+
+  /* Робимо список технологій компактнішим */
+  .tech-list {
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+  }
+  
+  .tech-list li {
+    margin-bottom: 6px !important;
+  }
+
+  /* Якщо в тебе там є блок про автора, його теж трохи стискаємо */
+  .author-info {
+    margin-top: 15px !important;
+    padding-top: 15px !important;
+  }
+  
+  .author-info strong {
+    font-size: 15px !important;
+  }
 }
 }
