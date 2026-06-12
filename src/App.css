@@ -278,9 +278,11 @@
     right: 0;
     top: auto;
     width: 100% !important; 
-    height: 60vh !important; /* Даємо трошки більше висоти */
+    height: 60dvh !important; /* dvh автоматично враховує панелі Safari! */
     max-height: 220px !important;
-    padding: 15px 20px !important; 
+    /* 2. ДОДАЄМО БЕЗПЕЧНУ ЗОНУ (Safe Area) ДЛЯ АЙФОНІВ */
+    /* Це відштовхне текст від нижнього краю екрана або системної смужки */
+    padding: 15px 20px calc(15px + env(safe-area-inset-bottom)) 20px !important;
     border-radius: 15px 15px 0 0; 
     
     /* МАГІЯ СКРОЛУ ТУТ: */
