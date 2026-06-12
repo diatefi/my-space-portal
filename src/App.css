@@ -273,20 +273,24 @@
 @media (max-width: 768px) {
   .info-panel {
     position: absolute;
-    bottom: 30;       /* Притискаємо до самого низу */
-    left: auto;
-    width: 100%;     /* На всю ширину */
-    top: auto;       /* Скасовуємо верхню прив'язку */
-    right: auto;
-    border-radius: 20px 20px 0 0; /* Округлюємо тільки верхні кути */
-    padding: 60px;
-    max-height: 50vh !important; /* Даємо більше місця */
-    min-height: 200px;
-    overflow-y: auto !important; 
-    -webkit-overflow-scrolling: touch;
-    pointer-events: auto !important; /* Гарантує, що кліки/скрол проходять */
-    touch-action: pan-y !important; /* Дозволяє тільки вертикальний скрол */
-    z-index: 9999 !important; /* Щоб панель була поверх усього */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100% !important; 
+    height: 60vh !important; /* Даємо трошки більше висоти */
+    max-height: 220px !important;
+    padding: 15px 20px !important; 
+    border-radius: 15px 15px 0 0; 
+    
+    /* МАГІЯ СКРОЛУ ТУТ: */
+    box-sizing: border-box !important;       /* Щоб відступи не ламали висоту вікна */
+    overflow-y: scroll !important;           /* Примусово вмикаємо скролбар */
+    overscroll-behavior: contain !important; /* Не даємо скролу "провалюватися" на 3D-сцену */
+    -webkit-overflow-scrolling: touch !important;
+    pointer-events: auto !important;
+    touch-action: pan-y !important;
+    z-index: 9999 !important;
   }
 
   /* Адаптація панелі планети для ГОРИЗОНТАЛЬНОГО режиму телефонів */
